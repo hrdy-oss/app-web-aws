@@ -1,0 +1,15 @@
+Options -Indexes
+RewriteEngine On
+
+# Teruskan header Authorization ke PHP
+RewriteCond %{HTTP:Authorization} .
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
+# File sensitif tidak boleh diakses dari web
+<FilesMatch "(^\.env|\.sample$|\.sql$|create_user\.php$)">
+    Require all denied
+</FilesMatch>
+
+# Semua request lain masuk ke front controller
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^ index.php [QSA,L]
