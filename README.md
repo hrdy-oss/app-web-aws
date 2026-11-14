@@ -30,3 +30,6 @@ Naikkan `upload_max_filesize` dan `post_max_size` ke 3M di `php.ini` (batas foto
 ## Catatan Learner Lab
 Kredensial AWS Learner Lab berganti setiap sesi. Perbarui `AWS_ACCESS_KEY_ID`,
 `AWS_SECRET_ACCESS_KEY`, dan `AWS_SESSION_TOKEN` di `be/.env` pada setiap EC2 saat sesi baru dimulai.
+
+## Konfigurasi env
+Ganti isi difile env dengan milik kamu 
